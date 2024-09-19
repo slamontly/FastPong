@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7k6ljuw1fvdt"]
+
+[ext_resource type="Texture2D" uid="uid://sibsbgj35475" path="res://Assets/Screenshot 2024-02-23 202514.png" id="1_1ptpq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi2k2"]
+size = Vector2(15, 60)
+
+[node name="BotPaddle" type="StaticBody2D"]
+
+[node name="BotCollision" type="CollisionShape2D" parent="."]
+position = Vector2(550, 0)
+scale = Vector2(1.1, 1.5)
+shape = SubResource("RectangleShape2D_oi2k2")
+
+[node name="BotSprite" type="Sprite2D" parent="BotCollision"]
+scale = Vector2(0.304348, 0.441177)
+texture = ExtResource("1_1ptpq")

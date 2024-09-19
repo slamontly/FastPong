@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bllb26ri0fq68"]
+
+[ext_resource type="Script" path="res://Scripts/Global.gd" id="1_y2xny"]
+[ext_resource type="Script" path="res://Scripts/Score1.gd" id="2_0vpjx"]
+[ext_resource type="Script" path="res://Scripts/Score2.gd" id="3_thpmr"]
+
+[node name="Global" type="Node"]
+script = ExtResource("1_y2xny")
+
+[node name="Score1" type="Label" parent="."]
+offset_left = -88.0
+offset_top = -311.0
+offset_right = -48.0
+offset_bottom = -277.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+script = ExtResource("2_0vpjx")
+
+[node name="Score2" type="Label" parent="."]
+offset_left = 88.0
+offset_top = -311.0
+offset_right = 128.0
+offset_bottom = -277.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+script = ExtResource("3_thpmr")

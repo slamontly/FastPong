@@ -1,0 +1,9 @@
+res://Scenes/ball.tscn
+res://Scripts/game_scene.tscn.gd
+res://Scenes/game_scene.tscn
+res://Scenes/start.tscn
+res://Scenes/bot_select_difficulty.tscn
+res://Scenes/global.tscn
+res://Scripts/Ball.gd
+res://Scripts/BotPaddle.gd
+res://Scripts/Score1.gd

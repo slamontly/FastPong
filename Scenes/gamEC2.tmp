@@ -1,0 +1,120 @@
+[gd_scene load_steps=12 format=3 uid="uid://bhwjus5dfeax3"]
+
+[ext_resource type="Script" path="res://Scripts/game_scene.tscn.gd" id="1_wgcgi"]
+[ext_resource type="Script" path="res://Scripts/Ball.gd" id="2_6upu1"]
+[ext_resource type="Texture2D" uid="uid://c48w6ycqduf2c" path="res://Assets/icon.svg" id="3_ko5ew"]
+[ext_resource type="Script" path="res://Scripts/PlayerPaddle.gd" id="4_6mpyl"]
+[ext_resource type="Texture2D" uid="uid://sibsbgj35475" path="res://Assets/Screenshot 2024-02-23 202514.png" id="5_lgxnx"]
+[ext_resource type="Script" path="res://Scripts/BotPaddle.gd" id="6_wu7yj"]
+[ext_resource type="Script" path="res://Scenes/Score1.gd" id="7_8rr30"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uk4w4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi2k2"]
+size = Vector2(15, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sceis"]
+size = Vector2(19.7738, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssrc8"]
+size = Vector2(567, 21.0938)
+
+[node name="GameScene" type="Node2D"]
+script = ExtResource("1_wgcgi")
+
+[node name="Ball" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+script = ExtResource("2_6upu1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+shape = SubResource("CircleShape2D_uk4w4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball/CollisionShape2D"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_ko5ew")
+
+[node name="PlayerPaddle" type="CharacterBody2D" parent="."]
+position = Vector2(-550, 0)
+scale = Vector2(1.1, 1.5)
+script = ExtResource("4_6mpyl")
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="PlayerPaddle"]
+shape = SubResource("RectangleShape2D_oi2k2")
+
+[node name="PlayerSprite" type="Sprite2D" parent="PlayerPaddle/PlayerCollision"]
+scale = Vector2(0.304348, 0.441177)
+texture = ExtResource("5_lgxnx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(1.1, 1.1)
+
+[node name="Boundaries" type="Node2D" parent="."]
+
+[node name="Top" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(0, -334)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Top"]
+scale = Vector2(58.36, 1)
+shape = SubResource("RectangleShape2D_sceis")
+
+[node name="Bottom" type="StaticBody2D" parent="Boundaries/Top"]
+position = Vector2(0, 668)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Top/Bottom"]
+position = Vector2(-1.00001, 0)
+scale = Vector2(58.36, 1)
+shape = SubResource("RectangleShape2D_sceis")
+
+[node name="BotPaddle" type="StaticBody2D" parent="."]
+script = ExtResource("6_wu7yj")
+
+[node name="BotCollision" type="CollisionShape2D" parent="BotPaddle"]
+position = Vector2(550, 0)
+scale = Vector2(1.1, 1.5)
+shape = SubResource("RectangleShape2D_oi2k2")
+
+[node name="BotSprite" type="Sprite2D" parent="BotPaddle/BotCollision"]
+scale = Vector2(0.304348, 0.441177)
+texture = ExtResource("5_lgxnx")
+
+[node name="Goal1" type="Area2D" parent="."]
+position = Vector2(-1268, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal1"]
+position = Vector2(405, -4)
+scale = Vector2(1, 33.28)
+shape = SubResource("RectangleShape2D_ssrc8")
+
+[node name="Goal2" type="Area2D" parent="."]
+position = Vector2(1228, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal2"]
+position = Vector2(-364, 0)
+scale = Vector2(1, 33.28)
+shape = SubResource("RectangleShape2D_ssrc8")
+
+[node name="UserInterface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Score1" type="Label" parent="UserInterface"]
+offset_left = -58.0
+offset_top = -311.0
+offset_right = -18.0
+offset_bottom = -277.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+script = ExtResource("7_8rr30")
+
+[node name="Score2" type="Label" parent="UserInterface"]
+offset_left = -58.0
+offset_top = -311.0
+offset_right = -18.0
+offset_bottom = -277.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+
+[connection signal="body_entered" from="Goal1" to="." method="_on_goal_1_body_entered"]
+[connection signal="body_entered" from="Goal2" to="." method="_on_goal_2_body_entered"]

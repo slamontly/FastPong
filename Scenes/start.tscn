@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds1nwestthds1"]
+
+[ext_resource type="Script" path="res://Scripts/start.tscn.gd" id="1_5brtj"]
+
+[node name="Start" type="Node2D"]
+position = Vector2(0, -1)
+script = ExtResource("1_5brtj")
+
+[node name="start" type="Button" parent="."]
+offset_left = 486.0
+offset_top = 230.0
+offset_right = 532.0
+offset_bottom = 261.0
+scale = Vector2(3.23401, 3.33891)
+text = "Start"
+
+[node name="title" type="Label" parent="."]
+offset_left = 400.0
+offset_top = 56.0
+offset_right = 496.0
+offset_bottom = 79.0
+scale = Vector2(3.3555, 4.58787)
+tooltip_text = "each time the ball hits something it moves faster o_o"
+mouse_filter = 0
+text = "Fast Pong :D"
+
+[node name="quit" type="Button" parent="."]
+offset_left = 487.0
+offset_top = 376.0
+offset_right = 533.0
+offset_bottom = 407.0
+scale = Vector2(3.23401, 3.33891)
+text = "Quit"
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,25 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1726470701
+Node2D.gd::GDScript::-1::1725294105::0::1::::<>Node2D<>::
+_todo.gd::GDScript::-1::1724066873::0::1::::<>Node<>::
+::res://Assets/::1717671744
+frictionless.tres::PhysicsMaterial::6584435041268864268::1716697411::0::1::::<><>::
+icon.svg::CompressedTexture2D::6877834696606808700::1708690740::1717671744::1::::<><>::
+Screenshot 2024-02-23 202514.png::CompressedTexture2D::1280007131039842338::1708691146::1717671690::1::::<><>::
+::res://Scenes/::1726379414
+ball.tscn::PackedScene::5272818288853599084::1726379414::0::1::::<><>::res://Scripts/Ball.gd<>uid://c48w6ycqduf2c::::res://Assets/icon.svg
+bot_paddle.tscn::PackedScene::4655009832800233941::1725361937::0::1::::<><>::uid://sibsbgj35475::::res://Assets/Screenshot 2024-02-23 202514.png
+bot_select_difficulty.tscn::PackedScene::6672325822326962111::1726379414::0::1::::<><>::res://Scripts/bot_select_difficulty.gd
+game_scene.tscn::PackedScene::2923742060469219962::1726379414::0::1::::<><>::res://Scripts/game_scene.tscn.gd<>uid://chegsufmblwdg::::res://Scenes/ball.tscn<>res://Scripts/PlayerPaddle.gd<>uid://sibsbgj35475::::res://Assets/Screenshot 2024-02-23 202514.png<>uid://b7k6ljuw1fvdt::::res://Scenes/bot_paddle.tscn<>res://Scripts/BotPaddle.gd<>uid://bllb26ri0fq68::::res://Scenes/global.tscn
+global.tscn::PackedScene::3181316707316950903::1726379414::0::1::::<><>::res://Scripts/Global.gd<>res://Scripts/Score1.gd<>res://Scripts/Score2.gd
+start.tscn::PackedScene::8477163905330134738::1726379414::0::1::::<><>::res://Scripts/start.tscn.gd
+::res://Scripts/::1726379414
+Ball.gd::GDScript::-1::1726379414::0::1::::<>RigidBody2D<>::
+BotPaddle.gd::GDScript::-1::1726379410::0::1::::<>StaticBody2D<>::
+bot_select_difficulty.gd::GDScript::-1::1725333462::0::1::::<>Node2D<>::
+game_scene.tscn.gd::GDScript::-1::1726378603::0::1::::<>Node2D<>::
+Global.gd::GDScript::-1::1725294445::0::1::::<>Node<>::
+PlayerPaddle.gd::GDScript::-1::1725336950::0::1::::<>CharacterBody2D<>::
+Score1.gd::GDScript::-1::1726378245::0::1::::<>Label<>::
+Score2.gd::GDScript::-1::1725294875::0::1::::<>Label<>::
+start.tscn.gd::GDScript::-1::1717672669::0::1::::<>Node2D<>::

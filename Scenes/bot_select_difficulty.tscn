@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2ceh4tdjpelr"]
+
+[ext_resource type="Script" path="res://Scripts/bot_select_difficulty.gd" id="1_72ong"]
+
+[node name="BotSelectDifficulty" type="Node2D"]
+script = ExtResource("1_72ong")
+
+[node name="Noob" type="Button" parent="."]
+offset_left = 117.0
+offset_top = 91.0
+offset_right = 168.0
+offset_bottom = 122.0
+scale = Vector2(4.23137, 4.81972)
+text = "Noob"
+
+[node name="Mid" type="Button" parent="."]
+offset_left = 477.0
+offset_top = 96.0
+offset_right = 515.0
+offset_bottom = 127.0
+scale = Vector2(5.22308, 5.30034)
+text = "Mid"
+
+[node name="Tryhard" type="Button" parent="."]
+offset_left = 784.0
+offset_top = 110.0
+offset_right = 853.0
+offset_bottom = 141.0
+scale = Vector2(4.3553, 4.3553)
+text = "Tryhard"
+
+[node name="back" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(1.92075, 1.9128)
+text = "Back"
+
+[connection signal="pressed" from="Noob" to="." method="_on_noob_pressed"]
+[connection signal="pressed" from="Mid" to="." method="_on_mid_pressed"]
+[connection signal="pressed" from="Tryhard" to="." method="_on_tryhard_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
